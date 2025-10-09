@@ -13,6 +13,12 @@ c. Algorithm UH-Simplex
 d. Algorithm SinglePass
 	1. It is an existing algorithm used for comparison. 
 	2. The code is in folder single_pass.py.
+e. Algorithm PrefLearning
+	1. It is an existing algorithm used for comparison. 
+	2. The code is in folder preferenceLearning.py.
+f. Algorithm ActiveRanking
+	1. It is an existing algorithm used for comparison. 
+	2. The code is in folder activeRanking.py.
 
 Usage Step
 ==========

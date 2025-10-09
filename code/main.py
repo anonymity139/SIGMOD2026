@@ -5,11 +5,13 @@ import uh
 import single_pass
 import highdim
 import random
+import activeRanking
 from structure import constant
 import time
 import argparse
 import os
 import highdim
+import preferenceLearning
 
 
 if __name__ == '__main__':
@@ -94,3 +96,25 @@ if __name__ == '__main__':
         single_pass.singlePass(pset, u, epsilon, dataset_name)
     elif alg_name == "APC":
         highdim.APC(pset, u, epsilon, dataset_name, u_r=1, round_num=5)
+    elif alg_name == "ActiveRanking":
+        activeRanking.active_ranking(pset, u, epsilon, dataset_name)
+    elif alg_name == "PrefLearning":
+        preferenceLearning.preference_learning(pset, u, epsilon, dataset_name)
+    elif alg_name == "APCExact":
+        highdim.APCExact1(pset, u, epsilon, dataset_name)
+    elif alg_name == "UH-RandomMiddle":
+        uh.max_utilityMiddle(pset, u, 2, epsilon, 1000, constant.RANDOM, constant.EXACT_BOUND, dataset_name)
+    elif alg_name == "UH-SimplexMiddle":
+        uh.max_utilityMiddle(pset, u, 2, epsilon, 1000, constant.SIMPlEX, constant.EXACT_BOUND, dataset_name)
+    elif alg_name == "APCMiddle":
+        highdim.APCEnhanceMiddle(pset, u, epsilon, dataset_name)
+    elif alg_name == "singlePassMiddle":
+        single_pass.singlePassMiddle(pset, u, epsilon, dataset_name)
+    elif alg_name == "ActiveRankingMiddle":
+        activeRanking.active_rankingMiddle(pset, u, epsilon, dataset_name)
+    elif alg_name == "PrefLearningMiddle":
+        preferenceLearning.preference_learningMiddle(pset, u, epsilon, dataset_name)
+    elif alg_name == "UH-Random(reduction)":
+        uh.dimension_reduction_max_utility(pset, u, 2, epsilon, 1000, constant.RANDOM, constant.EXACT_BOUND, dataset_name)
+    elif alg_name == "UH-Simplex(reduction)":
+        uh.dimension_reduction_max_utility(pset, u, 2, epsilon, 1000, constant.SIMPlEX, constant.EXACT_BOUND, dataset_name)
